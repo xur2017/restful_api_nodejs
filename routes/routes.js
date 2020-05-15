@@ -6,6 +6,7 @@ const appRouter = (app, fs) => {
         res.send('welcome to the restful_api_nodejs_server');
     });
 
+    //get request (show all users)
     app.get('/users', (req, res) => {
         fs.readFile(dataPath, 'utf8', (err, data) => {
             if (err) {
@@ -16,6 +17,7 @@ const appRouter = (app, fs) => {
         });
     });
 
+    //post request (add a new user)
     app.post('/users', (req, res) => {
         fs.readFile(dataPath, 'utf8', (err, data) => {
             if (err) {
@@ -35,6 +37,7 @@ const appRouter = (app, fs) => {
         });
     });
 
+    //delete request (delete a user)
     app.delete('/users/:id', (req, res) => {
         fs.readFile(dataPath, 'utf8', (err, data) => {
             if (err) {
@@ -54,6 +57,7 @@ const appRouter = (app, fs) => {
         });
     });
 
+    //put request (update a user)
     app.put('/users/:id', (req, res) => {
         fs.readFile(dataPath, 'utf8', (err, data) => {
             if (err) {
